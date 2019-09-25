@@ -22,48 +22,48 @@
   </div>
 
   <div class="navigation-item">
-    {% if site.navigation.simple_jekyll_search.enable %}
+    {% if site.methods.simple_jekyll_search.enable %}
     <div>
-      <script src="{{ site.navigation.simple_jekyll_search.autoloader }}"></script>
+      <script src="{{ site.methods.simple_jekyll_search.autoloader }}"></script>
     </div>
     {% endif %}
-    {% if site.navigation.jekyll_table_of_contents.enable %}
+    {% if site.methods.jekyll_table_of_contents.enable %}
     <div>
-      <script src="{{ site.navigation.jekyll_table_of_contents.autoloader }}"></script>
+      <script src="{{ site.methods.jekyll_table_of_contents.autoloader }}"></script>
     </div>
     {% endif %}
     {% if site.run_time.enable %}
     <div>
-      <script src="{{ site.navigation.run_time.src }}"></script>
+      <script src="{{ site.methods.run_time.src }}"></script>
     </div>
     {% endif %}
-    {% if site.navigation.busuanzi.enable %}
+    {% if site.methods.busuanzi.enable %}
     <div>
-      {{ site.navigation.busuanzi.page_pv.alert }}
-      <span id="busuanzi_value_page_pv"></span>{{ site.navigation.busuanzi.page_pv.unit }}
+      {{ site.methods.busuanzi.page_pv.alert }}
+      <span id="busuanzi_value_page_pv"></span>{{ site.methods.busuanzi.page_pv.unit }}
     </div>
     <div>
-      {{ site.navigation.busuanzi.site_pv.alert }}
-      <span id="busuanzi_value_site_pv"></span>{{ site.navigation.busuanzi.site_pv.unit }}
+      {{ site.methods.busuanzi.site_pv.alert }}
+      <span id="busuanzi_value_site_pv"></span>{{ site.methods.busuanzi.site_pv.unit }}
     </div>
     <div>
-      {{ site.navigation.busuanzi.site_uv.alert }}
-      <span id="busuanzi_value_site_uv"></span>{{ site.navigation.busuanzi.site_uv.unit }}
+      {{ site.methods.busuanzi.site_uv.alert }}
+      <span id="busuanzi_value_site_uv"></span>{{ site.methods.busuanzi.site_uv.unit }}
     </div>
-    <script src="{{ site.navigation.busuanzi.src }}"></script>
+    <script src="{{ site.methods.busuanzi.src }}"></script>
     {% endif %}
-    {% if site.navigation.last_edit.enable %}
+    {% if site.methods.last_edit.enable %}
     <div>
-      {{ site.navigation.last_edit.alert }}
+      {{ site.methods.last_edit.alert }}
       {{ site.time | date: '%F %T' }}
     </div>
     {% endif %}
-    {% if site.navigation.copyright.enable %}
+    {% if site.methods.copyright.enable %}
     <div>
       <i class="fas fa-copyright fa-fw"></i>
       {{ site.time | date: '%Y' }}
       {{ site.author }}
-      {{ site.navigation.copyright.text }}
+      {{ site.methods.copyright.text }}
     </div>
     {% endif %}
   </div>
