@@ -2,7 +2,7 @@
   <header class="sidebar clearfix">
     <div class="site-info">
       {% if site.avatar %}
-        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" style="border:0;border-radius: 50%;"/></a>
       {% endif %} 
       <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
       <p class="site-description">{{ site.description }}</p>
@@ -19,6 +19,53 @@
       {% endif %}
       {% endfor %}
     </nav>
+  </div>
+
+  <div class="navigation-item">
+    {% if site.navigation.simple_jekyll_search.enable %}
+    <div>
+      <script src="{{ site.navigation.simple_jekyll_search.autoloader }}"></script>
+    </div>
+    {% endif %}
+    {% if site.navigation.jekyll_table_of_contents.enable %}
+    <div>
+      <script src="{{ site.navigation.jekyll_table_of_contents.autoloader }}"></script>
+    </div>
+    {% endif %}
+    {% if site.run_time.enable %}
+    <div>
+      <script src="{{ site.navigation.run_time.src }}"></script>
+    </div>
+    {% endif %}
+    {% if site.navigation.busuanzi.enable %}
+    <div>
+      {{ site.navigation.busuanzi.page_pv.alert }}
+      <span id="busuanzi_value_page_pv"></span>{{ site.navigation.busuanzi.page_pv.unit }}
+    </div>
+    <div>
+      {{ site.navigation.busuanzi.site_pv.alert }}
+      <span id="busuanzi_value_site_pv"></span>{{ site.navigation.busuanzi.site_pv.unit }}
+    </div>
+    <div>
+      {{ site.navigation.busuanzi.site_uv.alert }}
+      <span id="busuanzi_value_site_uv"></span>{{ site.navigation.busuanzi.site_uv.unit }}
+    </div>
+    <script src="{{ site.navigation.busuanzi.src }}"></script>
+    {% endif %}
+    {% if site.navigation.last_edit.enable %}
+    <div>
+      {{ site.navigation.last_edit.alert }}
+      {{ site.time | date: '%F %T' }}
+    </div>
+    {% endif %}
+    {% if site.navigation.copyright.enable %}
+    <div>
+      <i class="fas fa-copyright fa-fw"></i>
+      {{ site.time | date: '%Y' }}
+      {{ site.author }}
+      {{ site.navigation.copyright.text }}
+    </div>
+    {% endif %}
   </div>
 
   <div class="wrapper-footer-desktop">
