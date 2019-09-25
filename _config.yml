@@ -106,9 +106,9 @@ head: # 删改前确定知道自己在做什么
     value: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css # 在https://fontawesome.com/icons 查看支持的图标
 
 body:
-  theme-base: theme-base-0d # 可选的值08~0f
-  layout-reverse: false # 开启后sidebar在右边，反之左边
-  sidebar-overlay: true # 开启后正文不随sidebar移动而移动
+  theme-base: theme-base-08 # 可选的值08~0f
+  layout-reverse: true # 开启后sidebar在右边，反之左边
+  sidebar-overlay: false # 开启后正文不随sidebar移动而移动
 
 script: # 需要在正文后调用的脚本或者插件的autoloader
 - var:
@@ -173,7 +173,7 @@ PrismJS: # 代码高亮插件，可以在https://prismjs.com/download.html自己
 
 sidebar:
   avatar: # 侧边栏显示的头像
-    enable: true
+    enable: false
     img: http://py4c6bw1i.bkt.clouddn.com/gyhx.jpg?e=1569379697&token=8kwWa7JjWPpVYud7UyzLK43qkfYoAK2pr9w3axO_:Hn7XA9RXy2-JgfqghAbGcK29BOg # 头像的地址
     info: <br/><br/><br/><br/><br/> # 头像背后的信息
   description: ''
@@ -239,7 +239,7 @@ sidebar:
     second: 秒
   copyright:
     enable: true
-    text: '<script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" aria-label="Star wu-kan/wu-kan.github.io on GitHub" href="https://github.com/wu-kan/wu-kan.github.io" data-icon="octicon-star" data-show-count="true">Star</a>'
+    text: '' #<script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" aria-label="Star wu-kan/wu-kan.github.io on GitHub" href="https://github.com/wu-kan/wu-kan.github.io" data-icon="octicon-star" data-show-count="true">Star</a>
 
 index:
   showtag:
