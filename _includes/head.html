@@ -1,0 +1,25 @@
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+  {% include meta.html %}
+  {% include fonts.html %}
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="shortcut icon" href="{{ site.favicon }}">
+  {% for css in site.my.css_files %}
+  <link rel="stylesheet" type="text/css" href="{{ css.src }}" />
+  {% endfor %}
+
+  <script src="https://kit.fontawesome.com/56f7faf3f4.js"></script>
+
+  {% for js in site.my.js_files %}
+  <script src="{{ js.src }}"></script>
+  {% endfor %}
+  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+
+</head>

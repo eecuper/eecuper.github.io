@@ -250,9 +250,27 @@ sidebar:
     enable: true
     text: '<script async defer src="https://buttons.github.io/buttons.js"></script><a class="github-button" aria-label="Star wu-kan/wu-kan.github.io on GitHub" href="https://github.com/wu-kan/wu-kan.github.io" data-icon="octicon-star" data-show-count="true">Star</a>'
 
+<<<<<<< HEAD
 index:
   showtag:
   - ICPC模板
+=======
+#自定义部分
+my:
+  css_files:
+    - src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css
+    - src: /public/css/eecuper.css
+      charset: utf-8
+  js_files:
+    - src: //cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js #jquery引入
+    - src: //cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js
+    - src: //cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-contents/toc.js
+    - src: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js
+    - src: /public/js/prism.js
+    - src: /public/js/mermaid.js
+    - src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+    - src: /public/js/eecuper.js    
+>>>>>>> b7c9f20d2a8e0f7e7413d68adadd67a223166eac
 
 post:
   meta:
@@ -296,6 +314,7 @@ valine:
   avatarForce: false # 每次访问强制拉取最新的评论列表头像
   recordIP: true # 记录评论者IP
 
+<<<<<<< HEAD
 page404:
   search_children: # 腾讯公益
     enable: false
@@ -303,3 +322,8 @@ page404:
     charset: utf-8
     homePageUrl: '/'
     homePageName: 回到我的主页
+=======
+excerpt_separator: ---
+
+theme: jekyll-theme-cayman
+>>>>>>> b7c9f20d2a8e0f7e7413d68adadd67a223166eac
