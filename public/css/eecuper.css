@@ -1,0 +1,5 @@
+.navigation-item{
+	padding:2px;
+}
+.navigation-item > div{text-align: center;}
+#search-input {width:55%;}
