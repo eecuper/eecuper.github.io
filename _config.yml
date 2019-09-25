@@ -184,22 +184,13 @@ sidebar:
   - title: 404810628@qq.com # email
     href: mailto:404810628@qq.com
     class: 'fas fa-envelope fa-fw'
-  - title: Cuper # codeforces
-    href: 
-    class: 'fas fa-chart-bar fw'
-  - title: Cuper # vjudge
-    href: 
-    class: 'fas fa-smile fa-fw'
   - title: 404810628 # qq
     class: 'fab fa-qq fa-fw'
   - title:  # weixin
     class: 'fab fa-weixin fa-fw'
   - title: github
-    href: 
+    href: http://leeqoo.github.io
     class: 'fab fa-github fa-fw'
-  - title: zhihu
-    href: 
-    class: 'fab fa-zhihu fa-fw'
   nav:
   - title: '<i class="fas fa-home fa-fw"></i> 首页'
     href: /
@@ -252,7 +243,8 @@ sidebar:
 
 index:
   showtag:
-  - ICPC模板 
+  - 记录
+  - 原创 
 
 post:
   meta:
