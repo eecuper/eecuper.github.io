@@ -19,7 +19,6 @@ avatar: http://py4c6bw1i.bkt.clouddn.com/gyhx.jpg?e=1569379697&token=8kwWa7JjWPp
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
 favicon: http://py4c6bw1i.bkt.clouddn.com/eevee_red.png?e=1569383005&token=8kwWa7JjWPpVYud7UyzLK43qkfYoAK2pr9w3axO_:RgXfl2ic_1AB-L4RrAzZmb0ZpCM
 
-
 # 菜单中的按钮
 navigation:
   - name: 首页
