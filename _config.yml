@@ -118,6 +118,7 @@ my:
       charset: utf-8
   js_files:
     - src: //cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js #jquery引入
+    - src: //cdn.jsdelivr.net/npm/simple-jekyll-search/dest/simple-jekyll-search.min.js
     - src: //cdn.jsdelivr.net/npm/ribbon.js/dist/ribbon.min.js #彩带背景
     - src: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js
     - src: /public/js/prism.js
