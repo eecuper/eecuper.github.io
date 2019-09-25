@@ -113,12 +113,17 @@ baseurl: /
 #自定义部分
 my:
   css_files:
+    - src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css
     - src: /public/css/eecuper.css
       charset: utf-8
   js_files:
     - src: //cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js #jquery引入
     - src: //cdn.jsdelivr.net/npm/ribbon.js/dist/ribbon.min.js #彩带背景
-    - src: /public/js/eecuper.js
+    - src: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js
+    - src: /public/js/prism.js
+    - src: /public/js/mermaid.js
+    - src: //cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+    - src: /public/js/eecuper.js    
 
 
 #
