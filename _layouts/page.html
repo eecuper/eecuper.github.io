@@ -15,10 +15,28 @@
   <script {% for var in node.var %} {{ var.key }}="{{ var.value }}" {% endfor %}>
   </script>
   {% endfor %}
+
+  <style type="text/css">
+    .top_nav{position: fixed;right:0px;top:0px;width:200px;}
+    .top_nav li{list-style: none;}
+    .top_nav li a{display: block;width:100%;padding:10px;}
+    .top_nav li a:hover{border:solid 1px #ccc;}
+  </style>
+  <div class="top_nav">
+    <ul>
+      {% for node in site.sidebar.nav %}
+      <li><a class="sidebar-nav-item{% if page.url == node.href %} active{% endif %}" href="{{ node.href }}">
+        {{ node.title }}
+      </a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
   <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
   <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" />
   <!-- Toggleable sidebar -->
+
   <div class="sidebar" id="sidebar">
     <div class="sidebar-item">
       {% if site.sidebar.avatar.enable %}
