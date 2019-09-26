@@ -17,13 +17,13 @@
   {% endfor %}
 
   <style type="text/css">
-    .top_nav{position: fixed;right:0px;top:0px;width:200px;z-index: 999999999;}
+    .top_nav{position: fixed;left:0px;top:50px;width:130px;z-index: 1;}    
     .top_nav li{list-style: none;}
-    .top_nav li a{display: block;width:100%;padding:10px;}
+    .top_nav li a{display: block;width:100%;padding:10px;text-align: center;}
     .top_nav li a:hover{background:rgb(172,65,66);color:#fff;}
   </style>
   <div class="top_nav">
-    <ul>
+    <ul style="padding:0px;">
       {% for node in site.sidebar.nav %}
       <li><a class="sidebar-nav-item{% if page.url == node.href %} active{% endif %}" href="{{ node.href }}">
         {{ node.title }}
