@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 阿超哥笔记
+title: www.eecuper.com
 ---
 ## 近期
 
