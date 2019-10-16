@@ -3,9 +3,10 @@ layout: post
 title: 常用站点收藏
 date: 2019-10-10
 Author: eecuper
-categories: [素材,资源,工具]
+categories: [素材,资源,工具,读书]
 category: 资源
 tags: [记录]
+tags: bookmarks
 comments: true
 ---
 
@@ -32,40 +33,40 @@ comments: true
 
 ## 开发
 
-> java
-> 
-> - [maven仓库](https://mvnrepository.com)
-> - [alibaba drud](https://github.com/alibaba/druid/wiki/常见问题)
-> - [阿里云maven](https://maven.aliyun.com/mvn/view)
-
-> php
+#### java
  
-> - [thinkphp3.2](http://document.thinkphp.cn/manual_3_2.html)
-> - [codeigniter](https://codeigniter.org.cn/user_guide/index.html)
-> - [yii](https://www.yiichina.com/)
-> - [laravel](https://xueyuanjun.com/)
+- [maven仓库](https://mvnrepository.com)
+- [alibaba drud](https://github.com/alibaba/druid/wiki/常见问题)
+- [阿里云maven](https://maven.aliyun.com/mvn/view)
 
-> go
-
-> - []()
-
-> python
-> 
-> - []()
-
-> database
-> 
-> - []()
-
-> sql
-
-> - []()
-
-> 运维
+#### php
  
-> - [docker](http://www.docker.org.cn)
-> - [nginx](http://tengine.taobao.org/book/)
-> - [nginx在线配置工具](https://github.com/digitalocean/nginxconfig.io)
+- [thinkphp3.2](http://document.thinkphp.cn/manual_3_2.html)
+- [codeigniter](https://codeigniter.org.cn/user_guide/index.html)
+- [yii](https://www.yiichina.com/)
+- [laravel](https://xueyuanjun.com/)
+
+#### go
+
+- []()
+
+#### python
+ 
+- []()
+
+#### database
+ 
+- []()
+
+#### sql
+
+- []()
+
+#### 运维
+ 
+- [docker](http://www.docker.org.cn)
+- [nginx](http://tengine.taobao.org/book/)
+- [nginx在线配置工具](https://github.com/digitalocean/nginxconfig.io)
 
 ---
 
@@ -99,8 +100,6 @@ comments: true
 - [Velocity.js 动画](https://www.cnblogs.com/aburron/p/6248812.html)
 - [zui](http://zui.sexy/)
 
-
-
 ---
 
 ## 娱乐
@@ -115,7 +114,7 @@ comments: true
 - []()
 - []()
 - []()
-
+<!-- 
 
 <script type="text/javascript">
 var links = document.links;
@@ -125,4 +124,4 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
        links[i].target = '_blank';
    } 
 }    
-</script>
+</script> -->
