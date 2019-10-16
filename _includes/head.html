@@ -1,25 +1,20 @@
 <head>
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url={{ "/ie.html" | prepend: site.baseurl }}"><![endif]-->
 
-  {% include meta.html %}
-  {% include fonts.html %}
+  <meta name="author" content="{{ site.author }}">
+  {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}">
+  {% endif %}
 
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="{{ site.favicon }}" />
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  {% seo %}
+  {% feed_meta %}
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-  <link rel="shortcut icon" href="{{ site.favicon }}">
-  {% for css in site.my.css_files %}
-  <link rel="stylesheet" type="text/css" href="{{ css.src }}" />
-  {% endfor %}
-
-  <script src="https://kit.fontawesome.com/56f7faf3f4.js"></script>
-
-  {% for js in site.my.js_files %}
-  <script src="{{ js.src }}"></script>
-  {% endfor %}
-  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-
+  <script src="{{ "/assets/js/prefixfree.js" | prepend: site.baseurl }}"></script>
 </head>
