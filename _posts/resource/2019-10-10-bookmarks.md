@@ -1,20 +1,21 @@
-<!-- ---
+---
 layout: post
 title: 常用站点收藏
 date: 2019-10-10
 Author: eecuper
-categories: 
+categories: [素材,资源,工具]
+category: 资源
 tags: [记录]
 comments: true
---- -->
+---
 
-##### 常用
+## 常用
 
 - [awesome-bookmrks](https://panjiachen.github.io/awesome-bookmarks/)
 
 ---
 
-##### 博客
+## 博客
 
 - [helloweba](https://www.helloweba.net/)
 - [linux 命令查找](http://linux.51yip.com/)
@@ -29,7 +30,7 @@ comments: true
 
 ---
 
-##### 开发
+## 开发
 
 > java
 > 
@@ -68,7 +69,7 @@ comments: true
 
 ---
 
-##### 工具
+## 工具
 
 - [vim在线练习游戏](https://vim-adventures.com/)
 - [mdeditor](https://www.mdeditor.com/)
@@ -82,7 +83,7 @@ comments: true
 
 ---
 
-##### js / css
+## js / css
 
 - [baidu jsapi](http://lbsyun.baidu.com/jsdemo.htm#a1_2)
 - [js 表格](https://www.datatables.net)
@@ -102,7 +103,7 @@ comments: true
 
 ---
 
-##### 娱乐
+## 娱乐
 
 - [爱看球](https://www.aikanqiu.com)
 - [达达兔](https://www.dadatu.co/)
