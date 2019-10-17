@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ORACLE 运行监控(1)创建执行一次JOB自动消除写法实例
-category: 资源
+category: 技术
 tags: orale
 keywords: oracle , job
 ---

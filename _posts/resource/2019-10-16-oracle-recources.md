@@ -148,34 +148,56 @@ select profile from dba_users where username='GAME';
 ### 2 表
 
 1、 查看用户下所有的表
+
 select * from user_tables;
+
 2、 查看名称包含log字符的表
+
 select object_name,object_id from user_objects
 where instr(object_name,'LOG')>0;
+
 3、 查看某表的创建时间
+
 select object_name,created from user_objects where object_name=upper('&table_name');
+
 4、 查看某表的大小
+
 select sum(bytes)/(1024*1024) as "size(M)" from user_segments
 where segment_name=upper('&table_name');
+
 5、 查看放在Oracle的内存区里的表
+
 select table_name,cache from user_tables where instr(cache,'Y')>0;
-3 索引
+
+### 3 索引
+
 1、 查看索引个数和类别
+
 select index_name,index_type,table_name from user_indexes order by table_name;
+
 2、 查看索引被索引的字段
+
 select * from user_ind_columns where index_name=upper('&index_name');
+
 3、 查看索引的大小
+
 select sum(bytes)/(1024*1024) as "size(M)" from user_segments
 where segment_name=upper('&index_name');
+
 4 序列号
+
 1、 查看序列号，last_number是当前值
+
 select * from user_sequences;
 
 ## 5 视图
 
 1、 查看视图的名称
+
 select view_name from user_views;
+
 2、 查看创建视图的select语句
+
 set view_name,text_length from user_views;
 set long 2000; 说明：可以根据视图的text_length值设定set long 的大小
 select text from user_views where view_name=upper('&view_name');
@@ -183,11 +205,13 @@ select text from user_views where view_name=upper('&view_name');
 ## 6 同义词
 
 1、 查看同义词的名称
+
 select * from user_synonyms;
 
 ## 7 约束条件
 
 1、 查看某表的约束条件
+
 select constraint_name, constraint_type,search_condition, r_constraint_name
 from user_constraints where table_name = upper('&table_name');
 select c.constraint_name,c.constraint_type,cc.column_name
@@ -199,49 +223,84 @@ order by cc.position;
 ## 8 存储函数和过程
 
 1、 查看函数和过程的状态
+
 select object_name,status from user_objects where object_type='FUNCTION';
 select object_name,status from user_objects where object_type='PROCEDURE';
+
 2、 查看函数和过程的源代码
+
 select text from all_source where owner=user and name=upper('&plsql_name');
 
 ## 9 常用的数据字典：
 
 dba_data_files:通常用来查询关于数据库文件的信息
+
 dba_db_links:包括数据库中的所有数据库链路，也就是databaselinks、
+
 dba_extents:数据库中所有分区的信息
+
 dba_free_space:所有表空间中的自由分区
+
 dba_indexs:关于数据库中所有索引的描述
+
 dba_ind_columns:在所有表及聚集上压缩索引的列
+
 dba_objects:数据库中所有的对象
+
 dba_rollback_segs:回滚段的描述
+
 dba_segments:所有数据库段分段的存储空间
+
 dba_synonyms:关于同义词的信息查询
+
 dba_tables:数据库中所有数据表的描述
+
 dba_tabespaces:关于表空间的信息
+
 dba_tab_columns:所有表描述、视图以及聚集的列
+
 dba_tab_grants/privs:对象所授予的权限
+
 dba_ts_quotas:所有用户表空间限额
+
 dba_users:关于数据的所有用户的信息
+
 dba_views:数据库中所有视图的文本
 
 ## 10 常用的动态性能视图：
 
 v$datafile：数据库使用的数据文件信息
+
 v$librarycache：共享池中SQL语句的管理信息
+
 v$lock：通过访问数据库会话，设置对象锁的所有信息
+
 v$log：从控制文件中提取有关重做日志组的信息
+
 v$logfile有关实例重置日志组文件名及其位置的信息
+
 v$parameter：初始化参数文件中所有项的值
+
 v$process：当前进程的信息
+
 v$rollname：回滚段信息
+
 v$rollstat：联机回滚段统计信息
+
 v$rowcache：内存中数据字典活动/性能信息
+
 v$session:有关会话的信息
+
 v$sesstat：在v$session中报告当前会话的统计信息
+
 v$sqlarea：共享池中使用当前光标的统计信息，光标是一块内存区域，有Oracle处理SQL语句时打开、
+
 v$statname：在v$sesstat中报告各个统计的含义
+
 v$sysstat：基于当前操作会话进行的系统统计
+
 v$waitstat：出现一个以上会话访问数据库的数据时的详细情况、当有一个以上的会话访问同一信息时，可出现等待情况、
+
 总结了一下这些，彻底区别了视图与数据字典，也不那么容易混淆、嘿嘿!!!
 
 ## 11 常用SQL查询：
@@ -298,7 +357,8 @@ WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAM
 
 ### 7、查看数据库库对象
 
-```select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
+```
+select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
 ```
 
 ### 8、查看数据库的版本　

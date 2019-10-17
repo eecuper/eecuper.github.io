@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ORACLE 运行监控(2) 表结构
-category: 资源
+category: 技术
 tags: orale
 keywords: oracle , job
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ORACLE 运行监控(3)任务监控存储过程
-category: 资源
+category: 技术
 tags: orale
 keywords: oracle , job
 ---
