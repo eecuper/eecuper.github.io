@@ -538,7 +538,8 @@ order by s.username, s.osuser
 
 #### 2）根据v.sid查看对应连接的资源占用等情况
 
-```select n.name, 
+```
+select n.name, 
 v.value, 
 n.class,
 n.statistic#  
@@ -582,7 +583,8 @@ where address = (select sql_address from v$session where sid = 71)
  
 #### 4）根据v.sid查看对应连接的资源占用等情况
 
-```select n.name, 
+```
+select n.name, 
 v.value, 
 n.class,
 n.statistic#  
@@ -622,7 +624,8 @@ where address = (select sql_address from v$session where sid = 71)
 
 ### 24．查询表空间使用情况
 
-```select a.tablespace_name "表空间名称",
+```
+select a.tablespace_name "表空间名称",
 100-round((nvl(b.bytes_free,0)/a.bytes_alloc)*100,2) "占用率(%)",
 round(a.bytes_alloc/1024/1024,2) "容量(M)",
 round(nvl(b.bytes_free,0)/1024/1024,2) "空闲(M)",
@@ -648,7 +651,8 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name = c.tablespace
 
 ### 25. 查询表空间的碎片程度 
 
-```select tablespace_name,count(tablespace_name) from dba_free_space group by tablespace_name 
+```
+select tablespace_name,count(tablespace_name) from dba_free_space group by tablespace_name 
 having count(tablespace_name)>10; 
 alter tablespace name coalesce; 
 alter table name deallocate unused; 
