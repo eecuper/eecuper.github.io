@@ -1,5 +1,5 @@
 ---
-title: Why Blog
+title: eecuper's blog
 layout: post
 ---
 
