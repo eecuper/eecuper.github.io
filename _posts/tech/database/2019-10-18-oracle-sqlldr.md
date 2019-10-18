@@ -1,12 +1,12 @@
 ---
 layout: post
 title: oracle sqlldr 导入批量数据
-categories: [资源 , 技术]
+categories: [技术]
 tags: [oracle , sqlldr]
 keywords: [oracle , sqlldr]
 ---
 
-![img](../../assets/img/oracle-11g.jpg)
+![img](../../../assets/img/oracle-11g.jpg)
 
 ## oracle 外部数据导入
 
