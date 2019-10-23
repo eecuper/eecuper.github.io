@@ -1,7 +1,7 @@
 ---
 layout: post
 title: vue 学习理解
-date: 2019 
+date: 2018-10-15 
 categories: [工具]
 keywords: vue
 ---

@@ -57,7 +57,7 @@ import router from './router'
 //这里主要封装了下vue的store管理了 
 //app:程序布局,主题,设备类型,多标签等等默认设置
 //user:用户信息,角色,token,登入,登出等方法判断
-//permission:权限,主要做了用户是否拥有路由,或者角色判断方法
+//permission:权限,主要做了用户是否拥有路由,或者角色判断方法.
 //初始化vuex.store  state , mutations , actions , getters 
 import store from './store/'
 
