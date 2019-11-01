@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ant Design Pro vue 学习使用
-category: 
+categories: [读书]
 tags: [ant,vue,蚂蚁金服]
 keywords: ant,vue,蚂蚁金服
 ---
