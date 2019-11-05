@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 想到哪写哪1
+title: 想到哪写哪(一)
 category: 随笔
 tags: [随笔]
 ---
