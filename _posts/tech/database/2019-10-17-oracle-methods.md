@@ -72,7 +72,7 @@ select t.*,row_number()over (partition by rpt_month,config_id order by amount de
 
 ```
 rank()over(partition by ... order by ...)
-dise_rank()over(partition by ... order by ...) 是否允许相同分值排名相同
+dense_rank()over(partition by ... order by ...) 是否允许相同分值排名相同
 ```
 
 ### 查询指定表表结构

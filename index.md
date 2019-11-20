@@ -1,7 +1,11 @@
 ---
-title: eecuper's blog
+title: 恐怖怪兽's blog
 layout: post
 ---
+
+## 恐怖怪兽
+
+命名由来于我家小小宝特爱玩打怪兽和扮演怪兽抓人游戏;#{^}#
 
 ## 博客简介
 
