@@ -214,7 +214,7 @@ id; // 'G-12345678'
 passport; // Uncaught ReferenceError: passport is not defined
 ```
 
-__有些时候，如果变量已经被声明了，再次赋值的时候，正确的写法也会报语法错误：__
+_有些时候，如果变量已经被声明了，再次赋值的时候，正确的写法也会报语法错误：_
 
 ```javaScript
 // 声明变量:
@@ -372,14 +372,204 @@ r; // [1, 5, 9, 15]
 // 无法理解的结果:
 [10, 20, 1, 2].sort(); // [1, 10, 2, 20]
 
-//Array的sort()方法默认把所有元素先转换为String再排序，结果'10'排在了'2'的前面，因为字符'1'比字符'2'的ASCII码小。
-```
+Array的sort()方法 **默认把所有元素先转换为String再排序排序** ，结果'10'排在了'2'的前面，因为字符'1'比字符'2'的ASCII码小。
 
+arr.sort(function (x, y) {
+    if (x < y) {
+        return -1;
+    }
+    if (x > y) {
+        return 1;
+    }
+    return 0;
+});
+console.log(arr); // [1, 2, 10, 20]
+```
 
 #### Array
 
+array对象还有几个比较实用的方法
+
+```javascript
+every() 
+
+var arr = ['Apple', 'pear', 'orange'];
+console.log(arr.every(function (s) {
+    return s.length > 0;
+})); // true, 因为每个元素都满足s.length>0 ,否则返回false
+
+find() 
+
+var arr = ['Apple', 'pear', 'orange'];
+console.log(arr.find(function (s) {
+    return s.toLowerCase() === s;
+})); // 'pear', 因为pear全部是小写 , 直接返回查找到的值 否则返回 undefined
+
+findIndex() //同find 如果找到则返回第一个值的下标位置 , 直接返回查找到的值 否则返回 -1
+
+foreach() //循环
+
+```
+
+### 函数作为返回值
+```javascript
+function lazy_sum(arr) {
+    var sum = function () {
+        return arr.reduce(function (x, y) {
+            return x + y;
+        });
+    }
+    return sum;
+}
+//当我们调用lazy_sum()时，返回的并不是求和结果，而是求和函数
+var f = lazy_sum([1, 2, 3, 4, 5]); // function sum()
+//调用函数f时，才真正计算求和的结果：
+f(); // 15
+
+//在这个例子中，我们在函数lazy_sum中又定义了函数sum，并且，内部函数sum可以引用外部函数lazy_sum的参数和局部变量，当lazy_sum返回函数sum时，相关参数和变量都保存在返回的函数中，这种称为“闭包（Closure）”的程序结构拥有极大的威力
+```
+
 ### 闭包
+
+```javascript
+function count() {
+    var arr = [];
+    for (var i=1; i<=3; i++) {
+        arr.push(function () {
+            return i * i;
+        });
+    }
+    return arr;
+}
+
+var results = count();
+var f1 = results[0];
+var f2 = results[1];
+var f3 = results[2];
+
+f1(); // 16
+f2(); // 16
+f3(); // 16
+```
+>全部都是16！原因就在于返回的函数引用了变量i，但它并非立刻执行。等到3个函数都返回时，它们所引用的变量i已经变成了4，因此最终结果为16。
+
+>返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量
+
+1、在函数内部定义函数，
+
+2、函数不调用不执行。
+
+3.在返回的对象中，实现了一个闭包，该闭包携带了局部变量x，并且，从外部代码根本无法访问到变量x。换句话说，闭包就是携带状态的函数，并且它的状态可以完全对外隐藏起来 
+
+```javascript
+function count() {
+    var arr = [];
+    for (var i=1; i<=3; i++) {
+        arr.push((function (n) {
+            return function () {
+                return n * n;
+            }
+        })(i));
+    }
+    return arr;
+}
+
+var results = count();
+var f1 = results[0];
+var f2 = results[1];
+var f3 = results[2];
+
+f1(); // 1
+f2(); // 4
+f3(); // 9
+```
 
 ### 箭头函数
 
-### generator
+ES6语法针对函数的一些简写方式; function ,() , return 在简单的闭包函数时进行省略; 
+
+>箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定。
+
+>回顾前面的例子，由于JavaScript函数对this绑定的错误处理，下面的例子无法得到预期结果
+
+```javascript
+var obj = {
+    birth: 1990,
+    getAge: function () {
+        var b = this.birth; // 1990
+        var fn = function () {
+            return new Date().getFullYear() - this.birth; // this指向window或undefined
+        };
+        return fn();
+    }
+};
+
+//使用箭头函数
+
+var obj = {
+    birth: 1990,
+    getAge: function () {
+        var b = this.birth; // 1990
+        var fn = () => new Date().getFullYear() - this.birth; // this指向obj对象
+        return fn();
+    }
+};
+obj.getAge(); // 25
+```
+
+### generator生成器
+
+generator和函数不同的是，generator由function*定义（注意多出的*号），并且，除了return语句，还可以用yield返回多次
+
+```javascript
+function* foo(x) {
+    yield x + 1;
+    yield x + 2;
+    return x + 3;
+}
+```
+调用生成器的两种方法:
+
+- 生成器.next(); //返回 {value: undefined, done: true} 对象,判断done 值来确定是否执行完毕
+- foreach(var o of 生成器){} 
+
+>next()方法会执行generator的代码，然后，每次遇到yield x;就返回一个对象{value: x, done: true/false}，然后“暂停”。返回的value就是yield的返回值，done表示这个generator是否已经执行结束了。如果done为true，则value就是return的返回值。
+
+>当执行到done为true时，这个generator对象就已经全部执行完毕，不要再继续调用next()了
+
+generator还有另一个巨大的好处，就是把异步回调代码变成“同步”代码
+
+```javascript
+//不是用生成器
+ajax('http://url-1', data1, function (err, result) {
+    if (err) {
+        return handle(err);
+    }
+    ajax('http://url-2', data2, function (err, result) {
+        if (err) {
+            return handle(err);
+        }
+        ajax('http://url-3', data3, function (err, result) {
+            if (err) {
+                return handle(err);
+            }
+            return success(result);
+        });
+    });
+});
+
+//使用生成器
+try {
+    r1 = yield ajax('http://url-1', data1);
+    r2 = yield ajax('http://url-2', data2);
+    r3 = yield ajax('http://url-3', data3);
+    success(r3);
+}
+catch (err) {
+    handle(err);
+}
+//看上去是同步的代码，实际执行是异步的
+```
+
+
+[generator教程](https://www.liaoxuefeng.com/wiki/1022910821149312/1023024381818112)
