@@ -34,10 +34,15 @@ comments: true
 ## 开发
 
 #### java
- 
+
 - [maven仓库](https://mvnrepository.com)
+- [hutool工具类官网](https://hutool.cn/)
+- [hutool文档](https://www.hutool.club/docs/#/)
 - [alibaba drud](https://github.com/alibaba/druid/wiki/常见问题)
 - [阿里云maven](https://maven.aliyun.com/mvn/view)
+- [懒猴子cg java框架在线生成器(流行)](http://cg.lazy-monkey.com/)
+- [使用懒猴子生成spring+mybatis](https://blog.csdn.net/qq_22067469/article/details/90523169)
+- [how2j java自学网站从基础到进阶框架(有详细步骤)](https://how2j.cn/)
 
 #### php
  

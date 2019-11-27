@@ -1,6 +1,6 @@
 ---
 layout: post
-title: js 笔记
+title: js 入门和函数
 category: 技术
 tags: [js]
 keywords: javaScript , 廖雪峰
