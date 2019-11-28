@@ -6,6 +6,10 @@ tags: [js]
 keywords: javaScript , 廖雪峰
 ---
 
+### 廖雪峰老师javaScript课程学习记录
+
+声明:该类型笔记内容绝大部分来自[廖雪峰老师javaScript课程](https://www.liaoxuefeng.com/wiki/1022910821149312)内容,笔记仅作为个人重新学习和理解JS的知识点记录,边看边记录加深印象以作备份;如需详细学习还请点击前面链接到[原作者博客](https://www.liaoxuefeng.com/wiki/1022910821149312)查看;
+
 ### 入门知识
 
 - 第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；

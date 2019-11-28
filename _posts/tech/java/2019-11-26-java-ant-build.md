@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ant工具使用
-category: 技术
+category: 工具
 tags: [java,ant]
 keywords: [java,ant]
 ---
@@ -481,6 +481,8 @@ rpt_2017 部署到adcloud 生成环境ant 编译打包测试
    <property name="tomcat.home" value="E:/apache-tomcat-8.5.47"/>
    <property name="dist" value="/app/dist"/>
    <property name="tmp" value="/app/tmp"/>
+   <!--动态设置jdk版本 , javac/java 这里不一定生效,最好还是再环境变量更改即可-->
+   <property name="env.JAVA_HOME" value="C:\Program Files\Java8\jdk1.8.0_102"/> 
    <!-- <property file="xx.properties" /> 这里如果是配置文件路径 , 后面变量引用也是一样 -->
 
     <!-- 初始ant所需目录和文件 -->
@@ -581,13 +583,38 @@ rpt_2017 部署到adcloud 生成环境ant 编译打包测试
         </exec>  
     </target>
 
-    <!--这里是一个执行带有 main 函数的例子
-    <target name="main">       
-        <java classname="com.test.distribute.Distribute 类的包路径" classpathref="jar包依赖">
-           <arg value="参数1"/> 
-           <arg value="参数2"/> 
+    <!--这里是一个执行带有 main函数的例子,这里依赖整个项目编译完成的基础  -->    
+    <target name="java.all" depends="compile">       
+        <!--classpath 属性设置编译好的java文件路径-->
+        <java classname="com.maizhi.util.AESEncryptParamSVImpl" classpath="${tmp}/WEB-INF/classes">
+            <arg/>      
+            <!--设置所需依赖包存储位置-->       
+            <classpath>
+                <fileset dir="${tmp}/WEB-INF/lib" includes="*.jar"/>
+            </classpath>
         </java> 
     </target>
-    -->
+   
+
+    <!--这里是一个执行带有 main函数的例子,这里只是单独编译impl类然后java执行main方法,忽略其他的编译文件,一定程度上速度稍快些 --> 
+    <target name="java.main">       
+        <javac encoding="UTF-8"   srcdir="./src"  destdir="./WebRoot/WEB-INF/classes"  debug="on" debuglevel="lines,vars,source" nowarn="true" failonerror="true">
+            <!-- javac源文件所依赖jar包文件所处目录 -->
+            <classpath>
+                <fileset dir="./WebRoot/WEB-INF/lib" includes="*.jar"/>
+            </classpath>
+            <!-- 编译该目录下指定文件,编译过程中会自动编译该类import过的其他类 -->
+            <include name="**/com/maizhi/util/AESEncryptParamSVImpl.java"/>
+        </javac>
+
+        <!--classpath 属性设置编译好的java文件路径-->        
+        <java classname="com.maizhi.util.AESEncryptParamSVImpl" classpath="./WebRoot/WEB-INF/classes">
+            <arg/>      
+            <!--设置所需依赖包存储位置-->       
+            <classpath>
+                <fileset dir="${tmp}/WEB-INF/lib" includes="*.jar"/>
+            </classpath>
+        </java> 
+    </target>
 </project>
 ```
