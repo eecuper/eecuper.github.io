@@ -14,24 +14,24 @@ filter: 'category'
 recent_num: 20
 
 # Social account
-# twitter: suyan404
-# weibo: suyan0830
-# github: suyan
-# instagram: suyan404
-# linkedin: suyan404
+# twitter: 
+# weibo: 
+# github: eecuper.github.io
+# instagram: 
+# linkedin: 
 
 # avatar and Favicon
-avatar: http://py4c6bw1i.bkt.clouddn.com/gyhx.jpg?e=1571278933&token=8kwWa7JjWPpVYud7UyzLK43qkfYoAK2pr9w3axO_:hYLcwwz7Z8_k8z361NRYaH4jnWc
-favicon: http://py4c6bw1i.bkt.clouddn.com/uper-logo.jpg?e=1571279364&token=8kwWa7JjWPpVYud7UyzLK43qkfYoAK2pr9w3axO_:-gd8ctBfn77V6kJppBUURk_aAlA
+avatar: site.baseurl/assets/icon/atar_bk.png
+favicon: site.baseurl/assets/icon/atar.png
 
 # disqus config
 disqus:
-  shortname: lichao-zh
+  shortname: kbgs-zh
 
 # google analytics config
 # ga:
 #   id: UA-54767140-1
-#   url: yansu.org
+#   url: 
 
 # Build settings
 permalink: /:year/:month/:day/:title.html

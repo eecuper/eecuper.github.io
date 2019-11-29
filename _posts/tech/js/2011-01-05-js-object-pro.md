@@ -125,4 +125,49 @@ var xiaoming = createStudent({
 xiaoming.grade; // 1
 ```
 
+### 原型继承
+es6引用了class继承,使用中避免使用原型继承(比较绕难以理解),class继承实际上就是在简化原型继承的代码方式而已;
+
 ### class继承
+class从ES6开始正式被引入到JavaScript中,class的目的就是让定义类更简单。
+
+```javascript
+//原型创建对象方式
+function Student(name) {
+    this.name = name;
+}
+
+Student.prototype.hello = function () {
+    alert('Hello, ' + this.name + '!');
+}
+//class方式
+class Student {
+    //构造方法
+    constructor(name) {
+        this.name = name;
+    }
+
+    //子方法 , 注意:无function 关键字
+    hello() {
+        alert('Hello, ' + this.name + '!');
+    }
+}
+//调用
+var xiaoming = new Student('小明');
+xiaoming.hello();
+```
+**继承**
+```javascript
+//注意PrimaryStudent的定义也是class关键字实现的，而extends则表示原型链对象来自Student。子类的构造函数可能会与父类不太相同，例如，PrimaryStudent需要name和grade两个参数，并且需要通过super(name)来调用父类的构造函数，否则父类的name属性无法正常初始化
+class PrimaryStudent extends Student {
+    constructor(name, grade) {
+        super(name); // 记得用super调用父类的构造方法!
+        this.grade = grade;
+    }
+
+    myGrade() {
+        alert('I am at grade ' + this.grade);
+    }
+}
+```
+class类继承和原型继承没有区别,class的作用就是让JavaScript引擎去实现原来需要我们自己编写的原型链代码。简而言之，用class的好处就是极大地简化了原型链代码
